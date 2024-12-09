@@ -26,7 +26,7 @@
   또는 `./gradlew.bat clean test` 명령을 실행할 때 모든 테스트가 아래와 같이 통과하는지 확인한다.
 
 ```
-BUILD SUCCESSFUL in 0s
+BUILD SUCCESSFUL in  0s
 ```
 
 ---
