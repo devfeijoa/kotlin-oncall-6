@@ -15,13 +15,24 @@ class InputView {
             // 쉼표로 구분된 월과 요일인지 확인
             Validator.validateSize(input)
             // 쉼표를 기준으로 분리
-            val (month, day) = input.split(",")
+            val parts = input.split(",")
+            // 각 값이 비어있지 않은지 검증
+            Validator.validateEachPartNotEmpty(parts)
 
+            //월과 요일 각각 추가 검증
+            val month = parts[0]
+            val day = parts[1]
 
-            return Pair(month.toInt(), day)
+            Validator.validateIsDigit(month) // month 숫자인지 확인
+            val monthInt = month.toInt()
+            Validator.validateNumberRange(monthInt) // month 범위인지 확인
+            Validator.validateLength(day) //요일 길이 확인
+            Validator.validateDay(day) // 유효한 요일 이름인지 확인
+
+            return Pair(monthInt, day)
         } catch (e: IllegalArgumentException) {
             println("[ERROR] 유효하지 않은 입력 값입니다. 다시 입력해 주세요.")
-            readMonthAndDay()
+            return readMonthAndDay()
         }
     }
 }
