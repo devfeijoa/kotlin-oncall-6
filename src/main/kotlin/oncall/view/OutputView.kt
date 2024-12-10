@@ -10,7 +10,7 @@ class OutputView {
     fun inputWeekendMessage() {
         print(INPUT_WEEKEND_WORKER_MESSAGE)
     }
-    
+
 
 
 
