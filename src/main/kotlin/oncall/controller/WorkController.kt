@@ -18,7 +18,7 @@ class WorkController(
         outputView.inputWeekendMessage()
         val weekendWorker = getValidNames()
 
-        
+
     }
 
     private fun getValidMonthDay(): Pair<Int, String> {
