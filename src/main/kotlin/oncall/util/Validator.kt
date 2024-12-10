@@ -47,6 +47,23 @@ object Validator {
         require(input in 1..12) {INVALID_INPUT}
     }
 
+    // 닉네임 최소 1자 최대 5자인지 리스트 모든 요소 확인
+    fun validateElementLength(input: List<String>) {
+        require(input.all { it.length in 1..5 }) {INVALID_INPUT}
+    }
+
+    // 최소 근무자 수, 최대 근무자 수 확인
+    fun validateSize(input: List<String>) {
+        require(input.size in 5..35) {INVALID_INPUT}
+    }
+
+    // 닉네임 중복 여부 확인
+    fun validateNotDuplicate(input: List<String>) {
+        require(input.distinct().size == input.size) {INVALID_INPUT}
+    }
+
+
+
     const val INVALID_INPUT = "[ERROR] 유효하지 않은 입력 값입니다. 다시 입력해 주세요."
 
 }

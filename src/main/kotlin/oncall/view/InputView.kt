@@ -2,10 +2,14 @@ package oncall.view
 
 import camp.nextstep.edu.missionutils.Console
 import oncall.util.Validator
+import oncall.util.Validator.INVALID_INPUT
 import oncall.util.Validator.validateDay
+import oncall.util.Validator.validateElementLength
 import oncall.util.Validator.validateIsDigit
 import oncall.util.Validator.validateLength
+import oncall.util.Validator.validateNotDuplicate
 import oncall.util.Validator.validateNumberRange
+import oncall.util.Validator.validateSize
 
 class InputView {
 
@@ -23,8 +27,14 @@ class InputView {
         } catch (e: IllegalArgumentException) {
             throw IllegalArgumentException(INVALID_INPUT)
         }
+    }
 
-
+    fun readNames(): List<String> {
+        val input = Console.readLine().split(SPLITTER)
+        validateElementLength(input)
+        validateSize(input)
+        validateNotDuplicate(input)
+        return input
     }
     companion object {
         const val SPLITTER = ","
