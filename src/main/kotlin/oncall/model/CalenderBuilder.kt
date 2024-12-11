@@ -44,7 +44,7 @@ class CalenderBuilder(private val dateInfo: Pair<Int, String>) {
     }
 
     private fun setHoliday(date: Int, month: Month) {
-        val todayDay = dayQueue.peek()
+        var todayDay = dayQueue.peek()
         when(isHoliday(month, date, todayDay)) {
             true -> {
                 if(!isWeekend(todayDay)) todayDay += WEEKDAY_HOLIDAY_MARK

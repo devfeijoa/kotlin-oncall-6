@@ -2,6 +2,7 @@ package oncall.controller
 
 import oncall.view.InputView
 import oncall.view.OutputView
+import oncall.model.CalenderBuilder
 
 class WorkController(
     private val inputView: InputView = InputView(),
@@ -17,6 +18,9 @@ class WorkController(
 
         outputView.inputWeekendMessage()
         val weekendWorker = getValidNames()
+
+        val calendarBuilder  = CalenderBuilder(dateInfo)
+        val calender = calendarBuilder.make()
 
 
     }
