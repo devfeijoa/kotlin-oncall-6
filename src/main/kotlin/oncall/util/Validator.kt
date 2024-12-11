@@ -2,24 +2,6 @@ package oncall.util
 
 object Validator {
 
-//    //빈 값이 들어왔을 경우(Month & Day 둘 다) => 전체 입력 값
-//    fun validateNotEmpty(input: String) {
-//        require(input.isNotBlank()) {"[ERROR] 입력값이 비어 있습니다."}
-//    }
-//
-//    // Month와 Day가 ","제외 size가 2가 맞는지
-//    fun validateSize(input: String) {
-//        val parts = input.split(",")
-//        require(parts.size == 2) {"[ERROR] 입력값은 ','로 구분된 월과 요일 두 개여야 합니다."}
-//    }
-//
-//    //각 값이 비어 있지 않은지 확인
-//    fun validateEachPartNotEmpty(parts: List<String>) {
-//        require(parts[0].isNotBlank()) {"[ERROR] 월의 값이 비어 있습니다."}
-//        require(parts[1].isNotBlank()) {"[ERROR] 요일의 값이 비어 있습니다."}
-//    }
-
-
     //Pair 중 String으로 받는 것 (요일)
     fun validateLength(input: String) {
         //요일을 한 글자로 받지 않는 경우
@@ -62,8 +44,24 @@ object Validator {
         require(input.distinct().size == input.size) {INVALID_INPUT}
     }
 
-
-
     const val INVALID_INPUT = "[ERROR] 유효하지 않은 입력 값입니다. 다시 입력해 주세요."
 
 }
+
+
+//    //빈 값이 들어왔을 경우(Month & Day 둘 다) => 전체 입력 값
+//    fun validateNotEmpty(input: String) {
+//        require(input.isNotBlank()) {"[ERROR] 입력값이 비어 있습니다."}
+//    }
+//
+//    // Month와 Day가 ","제외 size가 2가 맞는지
+//    fun validateSize(input: String) {
+//        val parts = input.split(",")
+//        require(parts.size == 2) {"[ERROR] 입력값은 ','로 구분된 월과 요일 두 개여야 합니다."}
+//    }
+//
+//    //각 값이 비어 있지 않은지 확인
+//    fun validateEachPartNotEmpty(parts: List<String>) {
+//        require(parts[0].isNotBlank()) {"[ERROR] 월의 값이 비어 있습니다."}
+//        require(parts[1].isNotBlank()) {"[ERROR] 요일의 값이 비어 있습니다."}
+//    }
